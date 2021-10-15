@@ -1,0 +1,6 @@
+Box2D==2.3.2
+Box2D-kengz==2.3.3
+cloudpickle==2.0.0
+gym==0.21.0
+numpy==1.21.2
+pyglet==1.5.21
