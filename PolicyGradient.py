@@ -4,15 +4,13 @@ from torch.distributions.categorical import Categorical
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.optim import Adam
+import gym
 
-from LunarLander import LunarLander
+#from LunarLander import LunarLander
 
 import wandb
 
 from network import NeuralNetwork
-
-# 1. Start a new run
-wandb.init(project='RL-Lander', entity='aditya10')
 
 eps = np.finfo(np.float32).eps.item()
 
@@ -36,23 +34,25 @@ def calc_fixed_rewards(rewards):
         return torch.tensor(-1*returns)
 
 def trainLander(render=False):
+
+    # Start a new run
+    wandb.init(project='RL-Lander', entity='aditya10')
     
     lr = 0.001
-    num_episodes = 5000
+    num_episodes = 20000
     gamma = 0.98
 
-
-    # 2. Save model inputs and hyperparameters
+    # Save model inputs and hyperparameters
     config = wandb.config
     config.learning_rate = lr
     config.num_episodes = num_episodes
     config.gamma = gamma
 
-    env = LunarLander()
-    action_space = np.array([0,1,2,3])
+    env = gym.make('LunarLander-v2')
 
     model = NeuralNetwork()
-    # 3. Log gradients and model parameters
+    
+    # Log gradients and model parameters
     wandb.watch(model)
 
     optimizer = Adam(model.parameters(), lr=lr)
@@ -106,9 +106,11 @@ def trainLander(render=False):
 
         optimizer.zero_grad()
 
+        # Option 1:
+        # returns = calc_fixed_rewards(rewards)
+        # Option 2:
         returns = calc_discount_rewards(rewards, gamma)
-        #returns = calc_fixed_rewards(rewards)
-
+        
         objectives = []
         for i, r in enumerate(returns):
             # If the log_policy is less negative, and the action follows the policy, then 
@@ -123,46 +125,13 @@ def trainLander(render=False):
 
         # 4. Log metrics to visualize performance
         wandb.log({"episode": e, "loss": loss, "reward": np.sum(rewards), "returns": torch.sum(returns).item()})
-        print({"episode": e, "loss": loss, "reward": np.sum(rewards), "returns": torch.sum(returns).item()})
+        if e % 100 == 0:
+            print({"episode": e, "loss": loss, "reward": np.sum(rewards), "returns": torch.sum(returns).item()})
+        if e % 500 == 0:
+            torch.save(model, './save/PG_latest_cktp.pt')
 
     # Save model
-    torch.save(model, './save/model.pt')
-
-
-def render_model(examples=10):
-
-    env = LunarLander()
-
-    model = torch.load('./save/model.pt')
-    model.eval()
-
-    for e in range(0, examples):
-
-        total_reward = 0
-
-        obv_state = torch.tensor(env.reset())
-
-        done = False
-        while not done:
-            
-            still_open = env.render()
-            if still_open == False:
-                break
-
-            policy = model(obv_state)
-
-            m = Categorical(policy)
-            action = m.sample()
-
-            obv_state, reward, done, _ = env.step(action.item())
-            obv_state = torch.tensor(obv_state)
-
-            total_reward += reward
-
-        print(total_reward)
-
-
+    torch.save(model, './save/model2.pt')
 
 if __name__ == "__main__":
     trainLander(render=False)
-    #render_model()
