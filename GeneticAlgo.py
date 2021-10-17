@@ -1,12 +1,15 @@
 import numpy as np
 import copy
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
+import json
+import gym
+import wandb
 
 from LunarLander import LunarLander
 from network import NeuralNetwork
 
+# 1. Start a new run
+wandb.init(project='RL-Lander', entity='aditya10', tags=["GA"])
 
 def run_eval(agent, env, render):
 
@@ -33,20 +36,24 @@ def run_eval(agent, env, render):
     
     return total_reward
 
-        
-
-
 def genetic(render=False):
 
-    N = 100
-    T = 20
+    N = 1000
+    T = 100
     mutation_power = 0.01
-    steps = 1000
+    steps = 10000
+
+    # 2. Save model inputs and hyperparameters
+    config = wandb.config
+    config.N = N
+    config.T = T
+    config.mutation_power = mutation_power
+    config.steps = steps
 
     population = []
     rewards = []
 
-    env = LunarLander()
+    env = gym.make('LunarLander-v2')
 
     # Initialize the first population
     for i in range(0, N):
@@ -88,12 +95,24 @@ def genetic(render=False):
         new_population.append(agent)
 
         # Print avg rewards for this step
-        print("\r", end='')
-        print({"step": step, "avg_reward": np.mean(rewards), "top_reward": np.max(rewards)})
+        # print("\r", end='')
+        info = {"step": step, "avg_reward": np.mean(rewards), "top_reward": np.max(rewards)}
+        print(info)
+
+        wandb.log(info)
 
         del population
         population = new_population
         rewards = []
+
+        if step % 30 == 0:
+            with open("GA_run.txt", "a") as file_object:
+                file_object.write(json.dumps(info)+"\n")
+            torch.save(agent, './save/GA_agent2.pt')
+
+    # Save model
+    best_agent = population[-1]
+    torch.save(best_agent, './save/GA_best_agent2.pt')
     
 def getEliteIndex(population, rewards, env, eval_count=10):
     # Also pick the top 10 to run elite eval
