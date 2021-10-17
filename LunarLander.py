@@ -16,13 +16,13 @@ import gym
 from gym import spaces
 from gym.utils import seeding, EzPickle
 
-FPS = 50
+FPS = 60
 SCALE = 30.0  # affects how fast-paced the game is, forces should be adjusted as well
 
 MAIN_ENGINE_POWER = 13.0
 SIDE_ENGINE_POWER = 0.6
 
-INITIAL_RANDOM = 1000.0  # Set 1500 to make game harder
+INITIAL_RANDOM = 10.0  # Set 1500 to make game harder
 
 LANDER_POLY = [(-14, +17), (-17, 0), (-17, -10), (+17, -10), (+17, 0), (+14, +17)]
 LEG_AWAY = 20
@@ -312,7 +312,9 @@ class LunarLander(gym.Env, EzPickle):
                 True,
             )
 
+        #print("\r world start step               <--here", end='')
         self.world.Step(1.0 / FPS, 6 * 30, 2 * 30)
+        #print("\r world start step               <--here", end='')
 
         pos = self.lander.position
         vel = self.lander.linearVelocity
@@ -353,6 +355,7 @@ class LunarLander(gym.Env, EzPickle):
         if not self.lander.awake:
             done = True
             reward = +100
+        
         return np.array(state, dtype=np.float32), reward, done, {}
 
     def render(self, mode="human"):
@@ -501,4 +504,5 @@ def demo_heuristic_lander(env, seed=None, render=False):
 
 
 if __name__ == "__main__":
-    demo_heuristic_lander(LunarLander(), render=True)
+    while True:
+        demo_heuristic_lander(LunarLander(), render=False)
