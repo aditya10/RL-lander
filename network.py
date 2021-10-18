@@ -15,3 +15,9 @@ class NeuralNetwork(nn.Module):
         h2 = F.relu(self.fc_hidden(h))
         out = F.softmax(self.fc_out(h2), dim=0)
         return out
+    
+    def init_weights(self):
+        for m in self.modules():
+            if isinstance(m, nn.Linear):
+                nn.init.xavier_normal_(m.weight)
+                nn.init.constant_(m.bias, 0)
