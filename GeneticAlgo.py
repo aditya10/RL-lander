@@ -35,7 +35,7 @@ def fitness_func(agent, env, render):
     # A better fitness function
     # Evaluates an agent three times
     # proposes an updated reward and a suggested mutation power
-    mutation_power = 0.01
+    mutation_power = 0.2
     rewards = []
 
     for _ in range(3):
@@ -47,10 +47,10 @@ def fitness_func(agent, env, render):
 
     if avg_reward > 200: # Is winning all games
         fitness_score += 200
-        mutation_power = 0.0001
-    elif avg_reward > 150: # Has the potiential to win a game
+        mutation_power = 0.01
+    elif avg_reward > 100: # Has the potiential to win a game
         fitness_score += 100
-        mutation_power = 0.001
+        mutation_power = 0.1
     elif avg_reward < -100: # Has performed terribly
         fitness_score -= 100
         mutation_power = 0.5
@@ -84,9 +84,9 @@ def genetic(render=False):
 
     N = 1000
     T = 100
-    mutation_power = 0.01
+    mutation_power = 0.2
     steps = 150
-    use_variable_mutation = True
+    use_variable_mutation = False
     use_fitness = True
 
     # Save model inputs and hyperparameters
@@ -174,11 +174,11 @@ def genetic(render=False):
         mutation_powers = []
 
         if step % 10 == 0:
-            torch.save(agent, './save/GA_agent3_step_'+str(step)+'.pt')
+            torch.save(agent, './save/GA_agent5_step_'+str(step)+'.pt')
 
     # Save best model
     best_agent = population[-1]
-    torch.save(best_agent, './save/GA3_best.pt')
+    torch.save(best_agent, './save/GA5_best.pt')
     
 if __name__ == "__main__":
     genetic()
