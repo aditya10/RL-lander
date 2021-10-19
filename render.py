@@ -1,3 +1,5 @@
+from numpy import double, mod
+import numpy as np
 import torch
 import gym
 from torch.distributions.categorical import Categorical
@@ -7,8 +9,16 @@ def render_model(examples=10):
 
     env = gym.make('LunarLander-v2')
 
-    model = torch.load('./save/model.pt')
+    model = torch.load('./save/model2.pt')
     model.eval()
+
+    # for name, param in model.named_parameters():
+    #     print(name)
+    #     print(param.data)
+    #     mutation = 0.5*np.random.normal(size=tuple(param.data.shape))
+    #     #mutation = 10
+    #     param.data += torch.DoubleTensor(mutation)
+    #     print(param.data)
 
     for e in range(0, examples):
 
