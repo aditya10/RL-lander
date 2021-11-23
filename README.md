@@ -10,8 +10,15 @@ Step 2: Install requirements
 ```
 wheel
 Box2D (box2d-py or box2d-kengz on Mac)
-gym
 pyglet
+```
+
+Step 3: Install gym
+
+```
+mv lunar_lander.py ../gym/gym/envs/box2d/
+cd ../gym
+pip install -e .
 ```
 
 ### Resources used

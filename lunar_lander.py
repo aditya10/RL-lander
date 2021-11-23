@@ -1,3 +1,31 @@
+"""
+Rocket trajectory optimization is a classic topic in Optimal Control.
+
+According to Pontryagin's maximum principle it's optimal to fire engine full throttle or
+turn it off. That's the reason this environment is OK to have discreet actions (engine on or off).
+
+The landing pad is always at coordinates (0,0). The coordinates are the first two numbers in the state vector.
+Reward for moving from the top of the screen to the landing pad and zero speed is about 100..140 points.
+If the lander moves away from the landing pad it loses reward. The episode finishes if the lander crashes or
+comes to rest, receiving an additional -100 or +100 points. Each leg with ground contact is +10 points.
+Firing the main engine is -0.3 points each frame. Firing the side engine is -0.03 points each frame.
+Solved is 200 points.
+
+Landing outside the landing pad is possible. Fuel is infinite, so an agent can learn to fly and then land
+on its first attempt. Please see the source code for details.
+
+To see a heuristic landing, run:
+
+python gym/envs/box2d/lunar_lander.py
+
+To play yourself, run:
+
+python examples/agents/keyboard_agent.py LunarLander-v2
+
+Created by Oleg Klimov. Licensed on the same terms as the rest of OpenAI Gym.
+"""
+
+
 import math
 import sys
 import numpy as np
@@ -22,7 +50,10 @@ SCALE = 30.0  # affects how fast-paced the game is, forces should be adjusted as
 MAIN_ENGINE_POWER = 13.0
 SIDE_ENGINE_POWER = 0.6
 
-INITIAL_RANDOM = 10.0  # Set 1500 to make game harder
+INITIAL_RANDOM = 1000.0  # Set 1500 to make game harder
+
+SLOPE = -1
+MOON_FRICTION = 0.8
 
 LANDER_POLY = [(-14, +17), (-17, 0), (-17, -10), (+17, -10), (+17, 0), (+14, +17)]
 LEG_AWAY = 20
@@ -35,6 +66,7 @@ SIDE_ENGINE_AWAY = 12.0
 
 VIEWPORT_W = 600
 VIEWPORT_H = 400
+
 
 class ContactDetector(contactListener):
     def __init__(self, env):
@@ -67,10 +99,18 @@ class LunarLander(gym.Env, EzPickle):
         self.seed()
         self.viewer = None
 
+        self.initial_random=INITIAL_RANDOM
+        self.slope=SLOPE
+        self.main_engine_power=MAIN_ENGINE_POWER
+        self.side_engine_power=SIDE_ENGINE_POWER
+        self.moon_friction=MOON_FRICTION
+
         self.world = Box2D.b2World()
         self.moon = None
         self.lander = None
         self.particles = []
+
+        self.age = 0
 
         self.prev_reward = None
 
@@ -91,6 +131,13 @@ class LunarLander(gym.Env, EzPickle):
     def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
+
+    def set_parameters(self, initial_random=INITIAL_RANDOM, slope=SLOPE, main_engine_power=MAIN_ENGINE_POWER, side_engine_power=SIDE_ENGINE_POWER, moon_friction=MOON_FRICTION):
+        self.initial_random = initial_random
+        self.slope = slope
+        self.main_engine_power = main_engine_power
+        self.side_engine_power = side_engine_power
+        self.moon_friction = moon_friction
 
     def _destroy(self):
         if not self.moon:
@@ -121,11 +168,13 @@ class LunarLander(gym.Env, EzPickle):
         self.helipad_x1 = chunk_x[CHUNKS // 2 - 1]
         self.helipad_x2 = chunk_x[CHUNKS // 2 + 1]
         self.helipad_y = H / 4
-        height[CHUNKS // 2 - 2] = self.helipad_y
-        height[CHUNKS // 2 - 1] = self.helipad_y
+        self.helipad_y1 = (H / 4) + self.slope
+        self.helipad_y2 = (H / 4) - self.slope
+        height[CHUNKS // 2 - 2] = self.helipad_y1
+        height[CHUNKS // 2 - 1] = self.helipad_y1
         height[CHUNKS // 2 + 0] = self.helipad_y
-        height[CHUNKS // 2 + 1] = self.helipad_y
-        height[CHUNKS // 2 + 2] = self.helipad_y
+        height[CHUNKS // 2 + 1] = self.helipad_y2
+        height[CHUNKS // 2 + 2] = self.helipad_y2
         smooth_y = [
             0.33 * (height[i - 1] + height[i + 0] + height[i + 1])
             for i in range(CHUNKS)
@@ -138,7 +187,7 @@ class LunarLander(gym.Env, EzPickle):
         for i in range(CHUNKS - 1):
             p1 = (chunk_x[i], smooth_y[i])
             p2 = (chunk_x[i + 1], smooth_y[i + 1])
-            self.moon.CreateEdgeFixture(vertices=[p1, p2], density=0, friction=0.1)
+            self.moon.CreateEdgeFixture(vertices=[p1, p2], density=0, friction=self.moon_friction)
             self.sky_polys.append([p1, p2, (p2[0], H), (p1[0], H)])
 
         self.moon.color1 = (0.0, 0.0, 0.0)
@@ -163,8 +212,8 @@ class LunarLander(gym.Env, EzPickle):
         self.lander.color2 = (0.3, 0.3, 0.5)
         self.lander.ApplyForceToCenter(
             (
-                self.np_random.uniform(-INITIAL_RANDOM, INITIAL_RANDOM),
-                self.np_random.uniform(-INITIAL_RANDOM, INITIAL_RANDOM),
+                self.np_random.uniform(-self.initial_random, self.initial_random),
+                self.np_random.uniform(-self.initial_random, self.initial_random),
             ),
             True,
         )
@@ -180,6 +229,7 @@ class LunarLander(gym.Env, EzPickle):
                     restitution=0.0,
                     categoryBits=0x0020,
                     maskBits=0x001,
+                    friction=0.3,
                 ),
             )
             leg.ground_contact = False
@@ -236,10 +286,9 @@ class LunarLander(gym.Env, EzPickle):
         if self.continuous:
             action = np.clip(action, -1, +1).astype(np.float32)
         else:
-            assert self.action_space.contains(action), "%r (%s) invalid " % (
-                action,
-                type(action),
-            )
+            assert self.action_space.contains(
+                action
+            ), f"{action!r} ({type(action)}) invalid "
 
         # Engines
         tip = (math.sin(self.lander.angle), math.cos(self.lander.angle))
@@ -268,12 +317,12 @@ class LunarLander(gym.Env, EzPickle):
                 m_power,
             )  # particles are just a decoration
             p.ApplyLinearImpulse(
-                (ox * MAIN_ENGINE_POWER * m_power, oy * MAIN_ENGINE_POWER * m_power),
+                (ox * self.main_engine_power * m_power, oy * self.main_engine_power * m_power),
                 impulse_pos,
                 True,
             )
             self.lander.ApplyLinearImpulse(
-                (-ox * MAIN_ENGINE_POWER * m_power, -oy * MAIN_ENGINE_POWER * m_power),
+                (-ox * self.main_engine_power * m_power, -oy * self.main_engine_power * m_power),
                 impulse_pos,
                 True,
             )
@@ -302,19 +351,17 @@ class LunarLander(gym.Env, EzPickle):
             )
             p = self._create_particle(0.7, impulse_pos[0], impulse_pos[1], s_power)
             p.ApplyLinearImpulse(
-                (ox * SIDE_ENGINE_POWER * s_power, oy * SIDE_ENGINE_POWER * s_power),
+                (ox * self.side_engine_power * s_power, oy * self.side_engine_power * s_power),
                 impulse_pos,
                 True,
             )
             self.lander.ApplyLinearImpulse(
-                (-ox * SIDE_ENGINE_POWER * s_power, -oy * SIDE_ENGINE_POWER * s_power),
+                (-ox * self.side_engine_power * s_power, -oy * self.side_engine_power * s_power),
                 impulse_pos,
                 True,
             )
 
-        #print("\r world start step               <--here", end='')
         self.world.Step(1.0 / FPS, 6 * 30, 2 * 30)
-        #print("\r world start step               <--here", end='')
 
         pos = self.lander.position
         vel = self.lander.linearVelocity
@@ -355,7 +402,6 @@ class LunarLander(gym.Env, EzPickle):
         if not self.lander.awake:
             done = True
             reward = +100
-        
         return np.array(state, dtype=np.float32), reward, done, {}
 
     def render(self, mode="human"):
@@ -400,8 +446,8 @@ class LunarLander(gym.Env, EzPickle):
                     path.append(path[0])
                     self.viewer.draw_polyline(path, color=obj.color2, linewidth=2)
 
-        for x in [self.helipad_x1, self.helipad_x2]:
-            flagy1 = self.helipad_y
+        for (x,y) in [(self.helipad_x1, self.helipad_y1), (self.helipad_x2, self.helipad_y2)]:
+            flagy1 = y
             flagy2 = flagy1 + 50 / SCALE
             self.viewer.draw_polyline([(x, flagy1), (x, flagy2)], color=(1, 1, 1))
             self.viewer.draw_polygon(
@@ -430,6 +476,7 @@ def heuristic(env, s):
     The heuristic for
     1. Testing
     2. Demonstration rollout.
+
     Args:
         env: The environment
         s (list): The state. Attributes:
@@ -493,15 +540,16 @@ def demo_heuristic_lander(env, seed=None, render=False):
                 break
 
         if steps % 20 == 0 or done:
-            print("observations:", " ".join(["{:+0.2f}".format(x) for x in s]))
-            print("step {} total_reward {:+0.2f}".format(steps, total_reward))
+            print("observations:", " ".join([f"{x:+0.2f}" for x in s]))
+            print(f"step {steps} total_reward {total_reward:+0.2f}")
         steps += 1
         if done:
             break
-    if render:
-        env.close()
+    #if render:
+        #env.close()
     return total_reward
 
 
 if __name__ == "__main__":
-    demo_heuristic_lander(LunarLander(), render=True)
+    for i in range(1):
+        demo_heuristic_lander(LunarLander(), render=True)
