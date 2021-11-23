@@ -64,12 +64,12 @@ def fitness_func(agent, env, eval_count=10, render=False):
 # The agent is the elite agent from the last generation
 # Create a population of 10 mutations of this agent, then evaluate them and select a new elite
 # If the old elite is better than the new elite, keep the old elite, set unchanged=True
-def train_agent(agent, env, render=False, steps=10):
+def train_agent(agent, env, render=False, steps=30):
 
     best_agent = agent
     unchanged = True
     
-    # Create a new population of 10 agents:
+    # Create a new population of 30 agents:
     for _ in range(0, steps):
 
         # create a new agent by modifying the parameters of this agent
@@ -123,9 +123,12 @@ def grow_env(env):
     return new_env
 
 
-def archive(agent, env):
+def archive(agent, env, final=False):
     # archive the agent and environment
-    path = "./archive/"+str(env.age)+"_"+str(agent.life)
+    path = "./archive/"
+    if final:
+        path = "./archive/final"
+    path = path+str(env.age)+"_"+str(agent.life)
     torch.save(agent, path+'.pt')
     env_params = [env.age, env.initial_random, env.slope, env.main_engine_power, env.side_engine_power, env.moon_friction]
     np.save(path+'.npy', env_params)
@@ -158,8 +161,13 @@ def stepper(pair):
 
 # Main loop: this is a POET-like algorithm, but with growing agent sizes!
 def growing_agents():
+
+    wandb.init(project='RL-Lander', entity='aditya10', tags=["Growing"])
     
-    steps = 1000
+    steps = 10000
+
+    config = wandb.config
+    config.steps = steps
 
     population = []
     new_population = []
@@ -186,7 +194,15 @@ def growing_agents():
     
         # replace the old population with the new population
         population = new_population
-        new_population = []        
+        new_population = []      
+
+        # log 
+        info = {"step": step, "age": population[-1][1].age}
+        wandb.log(info, step=step)
+        
+    # archive end population
+    for agent, env in population:
+        archive(agent, env, final=True)
 
 
 if __name__ == "__main__":
