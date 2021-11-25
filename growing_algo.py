@@ -97,12 +97,12 @@ def train_agent(agent, env, render=False, steps=30):
 
 # This function grows the hidden size of the agent by 1, and does one round of training
 def grow_agent(agent, env):
-    print("Growing agent")
+    print("\nGrowing agent")
     new_hidden_dim = agent.hidden_dim + 1
     new_agent = DynamicNeuralNetwork(hidden_dim=new_hidden_dim)
     new_agent.init_weights()
-    new_agent.running_rewards = new_agent.running_rewards[1:] + [new_agent.avg_reward]
-
+    
+    new_agent.running_rewards = agent.running_rewards
     new_agent.load_from_agent(agent.state_dict())
 
     best_agent, _ = train_agent(new_agent, env)
@@ -111,7 +111,7 @@ def grow_agent(agent, env):
 
 # This function grows the environment and makes it slightly more difficult
 def grow_env(env):
-    print("Growing environment")
+    print("\nGrowing environment")
     new_env = gym.make('LunarLander-v2')
     new_env.age = env.age + 1
     initial_random = env.initial_random + 10
@@ -138,22 +138,27 @@ def stepper(pair):
 
     new_population = []
 
-    if sum(agent.running_rewards)/len(agent.running_rewards) < 200:
+    rolling_avg_reward = sum(agent.running_rewards)/len(agent.running_rewards)
+
+    if rolling_avg_reward < 200:
                 
         # get the next agent
         best_agent, unchanged = train_agent(agent, env)
 
-        if best_agent.life >= 30 and best_agent.avg_reward < 0:
+        if best_agent.life >= 50:
             # if the agent is good enough, grow it
             best_agent = grow_agent(best_agent, env)
 
-        # add the new agent to the population
-        new_population.append((best_agent, env))
-
-        if best_agent.avg_reward > 0:
+        if rolling_avg_reward > 0 and not env.grown:
             # if the agent is good enough, create a new environment
             new_env = grow_env(env)
+            new_agent = copy.deepcopy(best_agent)
+            new_agent.running_rewards = [-100000]*5
             new_population.append((best_agent, new_env))
+            env.grown = True
+
+         # add the new agent to the population
+        new_population.append((best_agent, env))
     else:
         archive(agent, env)
 
@@ -180,24 +185,25 @@ def growing_agents():
 
     # for each generation...
     for step in range(steps):
+        
         #print(str(step), end = "\r")
         print(str(step)+" "+str(population[0][0].life)+" "+str(population[0][0].running_rewards), end = "\r")
 
         task_pool = Pool()
-        results = task_pool.map(stepper, population)
-
+        results = task_pool.imap_unordered(stepper, population)
         new_population = [item for sublist in results for item in sublist]
+        task_pool.close()
 
         if step % 100 == 0 and step > 0:
             # Conduct transfers
-            print("Transfers TBD")
+            print("\nTransfers TBD")
     
         # replace the old population with the new population
         population = new_population
         new_population = []      
 
         # log 
-        info = {"step": step, "age": population[-1][1].age}
+        info = {"step": step, "age": population[0][1].age, "population_size": len(population)}
         wandb.log(info, step=step)
         
     # archive end population

@@ -32,7 +32,7 @@ class DynamicNeuralNetwork(nn.Module):
     def init_weights(self):
         for m in self.modules():
             if isinstance(m, nn.Linear):
-                nn.init.constant_(m.weight, 0)
+                nn.init.xavier_normal_(m.weight)
                 nn.init.constant_(m.bias, 0)
 
     def load_from_agent(self, d):

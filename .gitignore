@@ -5,3 +5,5 @@
 GA_run.txt
 __pycache__
 .DS_Store
+/env
+/archive

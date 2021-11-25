@@ -111,6 +111,7 @@ class LunarLander(gym.Env, EzPickle):
         self.particles = []
 
         self.age = 0
+        self.grown = False
 
         self.prev_reward = None
 
