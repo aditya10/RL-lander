@@ -51,7 +51,7 @@ MAIN_ENGINE_POWER = 13.0
 SIDE_ENGINE_POWER = 0.6
 
 INITIAL_RANDOM = 1000.0  # Set 1500 to make game harder
-
+X_VARIANCE = 0
 SLOPE = -1
 MOON_FRICTION = 0.8
 
@@ -133,12 +133,13 @@ class LunarLander(gym.Env, EzPickle):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
-    def set_parameters(self, initial_random=INITIAL_RANDOM, slope=SLOPE, main_engine_power=MAIN_ENGINE_POWER, side_engine_power=SIDE_ENGINE_POWER, moon_friction=MOON_FRICTION):
+    def set_parameters(self, initial_random=INITIAL_RANDOM, slope=SLOPE, main_engine_power=MAIN_ENGINE_POWER, side_engine_power=SIDE_ENGINE_POWER, moon_friction=MOON_FRICTION, x_variance=X_VARIANCE):
         self.initial_random = initial_random
         self.slope = slope
         self.main_engine_power = main_engine_power
         self.side_engine_power = side_engine_power
         self.moon_friction = moon_friction
+        self.x_variance = x_variance
 
     def _destroy(self):
         if not self.moon:
@@ -195,8 +196,9 @@ class LunarLander(gym.Env, EzPickle):
         self.moon.color2 = (0.0, 0.0, 0.0)
 
         initial_y = VIEWPORT_H / SCALE
+        initial_x = VIEWPORT_W / SCALE + self.np_random.randint(-self.x_variance, self.x_variance)
         self.lander = self.world.CreateDynamicBody(
-            position=(VIEWPORT_W / SCALE / 2, initial_y),
+            position=(initial_x / 2, initial_y),
             angle=0.0,
             fixtures=fixtureDef(
                 shape=polygonShape(
@@ -222,7 +224,7 @@ class LunarLander(gym.Env, EzPickle):
         self.legs = []
         for i in [-1, +1]:
             leg = self.world.CreateDynamicBody(
-                position=(VIEWPORT_W / SCALE / 2 - i * LEG_AWAY / SCALE, initial_y),
+                position=(initial_x / 2 - i * LEG_AWAY / SCALE, initial_y),
                 angle=(i * 0.05),
                 fixtures=fixtureDef(
                     shape=polygonShape(box=(LEG_W / SCALE, LEG_H / SCALE)),
@@ -525,7 +527,7 @@ def heuristic(env, s):
     return a
 
 
-def demo_heuristic_lander(env, seed=None, render=False):
+def demo_heuristic_lander(env, seed=None, render=False, prints=True):
     env.seed(seed)
     total_reward = 0
     steps = 0
@@ -540,17 +542,34 @@ def demo_heuristic_lander(env, seed=None, render=False):
             if still_open == False:
                 break
 
-        if steps % 20 == 0 or done:
+        if prints and (steps % 20 == 0 or done):
             print("observations:", " ".join([f"{x:+0.2f}" for x in s]))
             print(f"step {steps} total_reward {total_reward:+0.2f}")
         steps += 1
         if done:
             break
-    #if render:
-        #env.close()
+    if render:
+        env.close()
     return total_reward
 
 
 if __name__ == "__main__":
-    for i in range(1):
-        demo_heuristic_lander(LunarLander(), render=True)
+    params = {
+        'initial_random': [0, 100, 400, 800, 1000, 1200, 1500, 1700, 2000],
+        'slope': [0, 0.2, -0.4, 0.5, -0.7, 0.9, -1.0, 1.2],
+        'main_engine_power': [0.1, 0.6, 1, 5, 10, 15, 20, 25, 30],
+        'side_engine_power': [0.1, 0.5, 1, 5, 10, 15, 20, 25, 30],
+        'moon_friction': [1, 0.8, 0.5, 0.2],
+        'x_variance': [0.1, 1, 2, 4, 8, 16]
+    }
+    rewards = []
+    for i in range(10):
+        env = LunarLander()
+        env.set_parameters(params["initial_random"][-1], params["slope"][-1], params["main_engine_power"][-1], params["side_engine_power"][3], params["moon_friction"][-1], params["x_variance"][-1])
+        r = demo_heuristic_lander(env, render=False, prints=False)
+        rewards.append(r)
+        del env
+        print(i, end='\r')
+    print(np.mean(rewards))
+    print(np.max(rewards))
+    print(len([i for i in rewards if i > 200]))

@@ -149,18 +149,54 @@ def stepper(pair):
             # if the agent is good enough, grow it
             best_agent = grow_agent(best_agent, env)
 
-        if rolling_avg_reward > 0 and not env.grown:
-            # if the agent is good enough, create a new environment
-            new_env = grow_env(env)
-            new_agent = copy.deepcopy(best_agent)
-            new_agent.running_rewards = [-100000]*5
-            new_population.append((best_agent, new_env))
-            env.grown = True
+        # if rolling_avg_reward > 0 and not env.grown:
+        #     # if the agent is good enough, create a new environment
+        #     new_env = grow_env(env)
+        #     new_agent = copy.deepcopy(best_agent)
+        #     new_agent.running_rewards = [-100000]*5
+        #     new_population.append((best_agent, new_env))
+        #     env.grown = True
 
          # add the new agent to the population
         new_population.append((best_agent, env))
     else:
         archive(agent, env)
+
+    return new_population
+
+
+def grow(population):
+
+    # Step 1: create a child list
+    parents = []
+    for pair in population:
+        agent, env = pair
+        rolling_avg_reward = sum(agent.running_rewards)/len(agent.running_rewards)
+        if rolling_avg_reward > 0 and rolling_avg_reward < 200:
+            parents.append(pair)
+    
+    # Step 2: grow environments, check if MC is satisfied
+    children = []
+    for pair in parents:
+        agent, env = pair
+        
+        for _ in range(1,10):
+            new_env = grow_env(env)
+            new_agent = copy.deepcopy(agent)
+            new_agent.running_rewards = [-100000]*5
+
+            best_agent = train_agent(new_agent, new_env)
+            if best_agent.avg_reward > -100 and best_agent.avg_reward < 200:
+                children.append((best_agent, new_env))
+
+    # Step 3: rank by novelty
+    # TODO if required
+
+    # Step 4: add top k children to the population
+    if len(children) > 3:
+        children = random.choices(children, k=3)
+
+    new_population = population + children
 
     return new_population
 
@@ -194,7 +230,11 @@ def growing_agents():
         new_population = [item for sublist in results for item in sublist]
         task_pool.close()
 
-        if step % 100 == 0 and step > 0:
+        if step % 200 == 0 and step > 0:
+            # Grow population
+            new_population = grow(new_population)
+
+        if step % 500 == 0 and step > 0:
             # Conduct transfers
             print("\nTransfers TBD")
     
@@ -212,4 +252,10 @@ def growing_agents():
 
 
 if __name__ == "__main__":
+
+    config = {
+        "steps": 10000,
+
+    }
+
     growing_agents()
