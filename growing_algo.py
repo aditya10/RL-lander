@@ -67,7 +67,6 @@ def fitness_func(agent, env, eval_count=10, render=False):
 def train_agent(agent, env, render=False, steps=30):
 
     best_agent = agent
-    unchanged = True
     
     # Create a new population of 30 agents:
     for _ in range(0, steps):
@@ -89,11 +88,10 @@ def train_agent(agent, env, render=False, steps=30):
             child_agent.fitness_score = fitness_score
             child_agent.life = 0
             best_agent = child_agent
-            unchanged = False
     
     best_agent.life +=1
 
-    return best_agent, unchanged
+    return best_agent
 
 # This function grows the hidden size of the agent by 1, and does one round of training
 def grow_agent(agent, env):
@@ -104,8 +102,8 @@ def grow_agent(agent, env):
     
     new_agent.running_rewards = agent.running_rewards
     new_agent.load_from_agent(agent.state_dict())
-
-    best_agent, _ = train_agent(new_agent, env)
+    new_agent.baseline_score = agent.avg_reward
+    best_agent = train_agent(new_agent, env)
 
     return best_agent
 
@@ -118,8 +116,9 @@ def grow_env(env):
     slope = random.choice([env.slope, -env.slope, env.slope+0.2, -env.slope-0.2])
     main_engine_power = random.choice([env.main_engine_power, env.main_engine_power+1, env.main_engine_power+3, env.main_engine_power+5])
     side_engine_power = random.choice([env.side_engine_power, env.side_engine_power+0.4, env.side_engine_power+1, env.side_engine_power+5])
-    moon_friction = max(0.2, env.moon_friction - 0.05)
-    new_env.set_parameters(initial_random, slope, main_engine_power, side_engine_power, moon_friction)
+    moon_friction = max(0.2, env.moon_friction - 0.1)
+    x_variance = max(16, random.choice([env.x_variance, env.x_variance+1, env.x_variance+2, env.x_variance+3]))
+    new_env.set_parameters(initial_random, slope, main_engine_power, side_engine_power, moon_friction, x_variance)
     return new_env
 
 
@@ -137,30 +136,16 @@ def stepper(pair):
     agent, env = pair
 
     new_population = []
-
-    rolling_avg_reward = sum(agent.running_rewards)/len(agent.running_rewards)
-
-    if rolling_avg_reward < 200:
                 
-        # get the next agent
-        best_agent, unchanged = train_agent(agent, env)
+    # get the next agent
+    best_agent = train_agent(agent, env)
 
-        if best_agent.life >= 50:
-            # if the agent is good enough, grow it
-            best_agent = grow_agent(best_agent, env)
+    if best_agent.life >= 50 and best_agent.avg_reward > best_agent.baseline_score:
+        # if the agent's capacity is saturated, grow it
+        best_agent = grow_agent(best_agent, env)
 
-        # if rolling_avg_reward > 0 and not env.grown:
-        #     # if the agent is good enough, create a new environment
-        #     new_env = grow_env(env)
-        #     new_agent = copy.deepcopy(best_agent)
-        #     new_agent.running_rewards = [-100000]*5
-        #     new_population.append((best_agent, new_env))
-        #     env.grown = True
-
-         # add the new agent to the population
-        new_population.append((best_agent, env))
-    else:
-        archive(agent, env)
+        # add the new agent to the population
+    new_population.append((best_agent, env))
 
     return new_population
 
@@ -174,6 +159,8 @@ def grow(population):
         rolling_avg_reward = sum(agent.running_rewards)/len(agent.running_rewards)
         if rolling_avg_reward > 0 and rolling_avg_reward < 200:
             parents.append(pair)
+        elif rolling_avg_reward > 200 and len(population) > 5:
+            archive(agent, env)
     
     # Step 2: grow environments, check if MC is satisfied
     children = []
@@ -182,6 +169,7 @@ def grow(population):
         
         for _ in range(1,10):
             new_env = grow_env(env)
+            env.grown = True
             new_agent = copy.deepcopy(agent)
             new_agent.running_rewards = [-100000]*5
 
@@ -230,7 +218,7 @@ def growing_agents():
         new_population = [item for sublist in results for item in sublist]
         task_pool.close()
 
-        if step % 200 == 0 and step > 0:
+        if step % 100 == 0 and step > 0:
             # Grow population
             new_population = grow(new_population)
 
@@ -243,7 +231,7 @@ def growing_agents():
         new_population = []      
 
         # log 
-        info = {"step": step, "age": population[0][1].age, "population_size": len(population)}
+        info = {"step": step, "age": population[0][1].age, "life": population[0][0].life, "avg_reward": population[0][0].avg_reward, "hidden_size": population[0][0].hidden_dim, "population_size": len(population)}
         wandb.log(info, step=step)
         
     # archive end population
@@ -255,7 +243,6 @@ if __name__ == "__main__":
 
     config = {
         "steps": 10000,
-
     }
 
     growing_agents()

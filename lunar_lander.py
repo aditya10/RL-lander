@@ -51,7 +51,7 @@ MAIN_ENGINE_POWER = 13.0
 SIDE_ENGINE_POWER = 0.6
 
 INITIAL_RANDOM = 1000.0  # Set 1500 to make game harder
-X_VARIANCE = 0
+X_VARIANCE = 1
 SLOPE = -1
 MOON_FRICTION = 0.8
 
@@ -104,6 +104,7 @@ class LunarLander(gym.Env, EzPickle):
         self.main_engine_power=MAIN_ENGINE_POWER
         self.side_engine_power=SIDE_ENGINE_POWER
         self.moon_friction=MOON_FRICTION
+        self.x_variance=X_VARIANCE
 
         self.world = Box2D.b2World()
         self.moon = None
@@ -140,6 +141,19 @@ class LunarLander(gym.Env, EzPickle):
         self.side_engine_power = side_engine_power
         self.moon_friction = moon_friction
         self.x_variance = x_variance
+
+    def show_param(self):
+        params = {
+            "initial_random": self.initial_random,
+            "slope": self.slope,
+            "main_engine_power": self.main_engine_power,
+            "side_engine_power": self.side_engine_power,
+            "moon_friction": self.moon_friction,
+            "x_variance": self.x_variance,
+            "age": self.age,
+            "grown": self.grown,
+        }
+        return params
 
     def _destroy(self):
         if not self.moon:
