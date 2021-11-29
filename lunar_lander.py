@@ -96,6 +96,7 @@ class LunarLander(gym.Env, EzPickle):
 
     def __init__(self):
         EzPickle.__init__(self)
+        print("Initializing lunar lander environment...")
         self.seed()
         self.viewer = None
 
@@ -133,6 +134,9 @@ class LunarLander(gym.Env, EzPickle):
     def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
+
+    def set_age(self, age):
+        self.age = age
 
     def set_parameters(self, initial_random=INITIAL_RANDOM, slope=SLOPE, main_engine_power=MAIN_ENGINE_POWER, side_engine_power=SIDE_ENGINE_POWER, moon_friction=MOON_FRICTION, x_variance=X_VARIANCE):
         self.initial_random = initial_random
