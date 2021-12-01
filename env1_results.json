@@ -1,0 +1,3609 @@
+{
+    "generations": [
+        {
+            "step": 0,
+            "running_reward": -472.02499899348743,
+            "best_reward": -369.76362277825166,
+            "elite_reward": -369.76362277825166,
+            "elite_avg_reward": -9036.976362277825,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": -469.76362277825166,
+                "avg_reward": -369.76362277825166,
+                "running_rewards": [
+                    -100000,
+                    -100000,
+                    -100000,
+                    -100000,
+                    -369.76362277825166
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.5,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 10,
+            "running_reward": -33.96736126243629,
+            "best_reward": 19.733988939638287,
+            "elite_reward": 19.733988939638287,
+            "elite_avg_reward": -40.84427204209797,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 19.733988939638287,
+                "avg_reward": 19.733988939638287,
+                "running_rewards": [
+                    -80.21271599030985,
+                    -97.7695969467084,
+                    -0.21453207798149876,
+                    -26.03546364454679,
+                    19.733988939638287
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 20,
+            "running_reward": -16.038913215115194,
+            "best_reward": 38.196672173360845,
+            "elite_reward": 11.572621379156411,
+            "elite_avg_reward": 20.68623774074792,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 38.196672173360845,
+                "avg_reward": 38.196672173360845,
+                "running_rewards": [
+                    -26.03546364454679,
+                    -14.622560736474702,
+                    -36.50948467323995,
+                    -83.4144889846954,
+                    38.196672173360845
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 30,
+            "running_reward": -3.7557830315972205,
+            "best_reward": 61.90934779964757,
+            "elite_reward": 57.27376730489955,
+            "elite_avg_reward": 42.92413272503717,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 61.90934779964757,
+                "avg_reward": 61.90934779964757,
+                "running_rewards": [
+                    -77.40380777242216,
+                    24.09627748325944,
+                    51.34066376856835,
+                    -23.62265591791648,
+                    61.90934779964757
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 40,
+            "running_reward": 24.62324019573265,
+            "best_reward": 82.29769832422298,
+            "elite_reward": 75.97290455241139,
+            "elite_avg_reward": 74.16904358770383,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 82.29769832422298,
+                "avg_reward": 82.29769832422298,
+                "running_rewards": [
+                    4.396366097110095,
+                    -165.4807868216616,
+                    -16.86887350088851,
+                    -49.732405437703285,
+                    82.29769832422298
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 50,
+            "running_reward": 24.712526872973285,
+            "best_reward": 91.36082766273016,
+            "elite_reward": 91.36082766273016,
+            "elite_avg_reward": 74.99626620905079,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 91.36082766273016,
+                "avg_reward": 91.36082766273016,
+                "running_rewards": [
+                    -19.47663353538842,
+                    60.853136530903726,
+                    18.517490830146834,
+                    24.951821356300997,
+                    91.36082766273016
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 60,
+            "running_reward": 33.910957046520465,
+            "best_reward": 91.36082766273016,
+            "elite_reward": 86.7563907135363,
+            "elite_avg_reward": 80.05857258953134,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 91.36082766273016,
+                "avg_reward": 91.36082766273016,
+                "running_rewards": [
+                    -19.47663353538842,
+                    60.853136530903726,
+                    18.517490830146834,
+                    24.951821356300997,
+                    91.36082766273016
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 70,
+            "running_reward": 31.75733987252995,
+            "best_reward": 91.36082766273016,
+            "elite_reward": 79.19180013952254,
+            "elite_avg_reward": 85.45600081841886,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 91.36082766273016,
+                "avg_reward": 91.36082766273016,
+                "running_rewards": [
+                    -19.47663353538842,
+                    60.853136530903726,
+                    18.517490830146834,
+                    24.951821356300997,
+                    91.36082766273016
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 80,
+            "running_reward": 40.38194495902891,
+            "best_reward": 96.50457660532642,
+            "elite_reward": 80.6955109256037,
+            "elite_avg_reward": 87.41730296986944,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 96.50457660532642,
+                "avg_reward": 96.50457660532642,
+                "running_rewards": [
+                    -0.49186613743286217,
+                    66.55186730364919,
+                    -9.955137428406072,
+                    -57.85445715890758,
+                    96.50457660532642
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 90,
+            "running_reward": 47.45062593695827,
+            "best_reward": 96.76169448028232,
+            "elite_reward": 81.92428090493712,
+            "elite_avg_reward": 88.31228293323593,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 96.76169448028232,
+                "avg_reward": 96.76169448028232,
+                "running_rewards": [
+                    66.96309649130573,
+                    30.600469582390946,
+                    -77.86200396478638,
+                    38.81694747286178,
+                    96.76169448028232
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 100,
+            "running_reward": 39.46241732504013,
+            "best_reward": 96.76169448028232,
+            "elite_reward": 92.90924542690168,
+            "elite_avg_reward": 89.5267297717662,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 96.76169448028232,
+                "avg_reward": 96.76169448028232,
+                "running_rewards": [
+                    66.96309649130573,
+                    30.600469582390946,
+                    -77.86200396478638,
+                    38.81694747286178,
+                    96.76169448028232
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 110,
+            "running_reward": 40.2224977986253,
+            "best_reward": 98.6640320004507,
+            "elite_reward": 85.01299114109966,
+            "elite_avg_reward": 89.6711783239371,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 98.6640320004507,
+                "avg_reward": 98.6640320004507,
+                "running_rewards": [
+                    84.56800589994974,
+                    -27.54466237241086,
+                    13.85855996600743,
+                    68.23050446937525,
+                    98.6640320004507
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 120,
+            "running_reward": 112.19856208074539,
+            "best_reward": 200.75294294021643,
+            "elite_reward": 200.75294294021643,
+            "elite_avg_reward": 145.88686131717822,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 400.7529429402164,
+                "avg_reward": 200.75294294021643,
+                "running_rewards": [
+                    96.4315936354357,
+                    117.55796089915066,
+                    116.60965058669368,
+                    7.6280539348430665,
+                    200.75294294021643
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.01,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 126,
+            "running_reward": 170.19291562487675,
+            "best_reward": 245.96224759370733,
+            "elite_reward": 243.10962529242587,
+            "elite_avg_reward": 204.64372720921114,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 445.96224759370733,
+                "avg_reward": 245.96224759370733,
+                "running_rewards": [
+                    116.60965058669368,
+                    7.6280539348430665,
+                    132.62581209047346,
+                    65.46302423858195,
+                    245.96224759370733
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.01,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 0,
+                "slope": 0,
+                "main_engine_power": 15,
+                "side_engine_power": 3,
+                "moon_friction": 1,
+                "x_variance": 1,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 130,
+            "running_reward": -78.06479623127652,
+            "best_reward": 5.274396793743217,
+            "elite_reward": -42.280029268113196,
+            "elite_avg_reward": -6004.950616388343,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 5.274396793743217,
+                "avg_reward": 5.274396793743217,
+                "running_rewards": [
+                    104.60522804742307,
+                    147.82011728799492,
+                    219.37827838726622,
+                    126.41878441216538,
+                    5.274396793743217
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 140,
+            "running_reward": -58.04614920904572,
+            "best_reward": 23.473622873075865,
+            "elite_reward": -19.79999537412163,
+            "elite_avg_reward": -5.370724576136694,
+            "elite_age": 4,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 23.473622873075865,
+                "avg_reward": 23.473622873075865,
+                "running_rewards": [
+                    -60.59972755718839,
+                    -49.25269967509039,
+                    -84.2466714301114,
+                    -56.41434605596934,
+                    23.473622873075865
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 150,
+            "running_reward": -37.8214080664451,
+            "best_reward": 23.473622873075865,
+            "elite_reward": 3.553330431839362,
+            "elite_avg_reward": -3.724388571463191,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 23.473622873075865,
+                "avg_reward": 23.473622873075865,
+                "running_rewards": [
+                    -60.59972755718839,
+                    -49.25269967509039,
+                    -84.2466714301114,
+                    -56.41434605596934,
+                    23.473622873075865
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 160,
+            "running_reward": -37.551762176318064,
+            "best_reward": 27.623327325612628,
+            "elite_reward": 13.186112603154722,
+            "elite_avg_reward": 10.393739747582114,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 27.623327325612628,
+                "avg_reward": 27.623327325612628,
+                "running_rewards": [
+                    -15.671899262181885,
+                    -42.15704828293443,
+                    -19.477412056579464,
+                    -54.00860867173611,
+                    27.623327325612628
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 170,
+            "running_reward": -31.445381345178838,
+            "best_reward": 27.623327325612628,
+            "elite_reward": 10.66106909655724,
+            "elite_avg_reward": 2.8657460072013214,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 27.623327325612628,
+                "avg_reward": 27.623327325612628,
+                "running_rewards": [
+                    -15.671899262181885,
+                    -42.15704828293443,
+                    -19.477412056579464,
+                    -54.00860867173611,
+                    27.623327325612628
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 180,
+            "running_reward": -28.09507279116344,
+            "best_reward": 28.970062308548354,
+            "elite_reward": 13.705784029985727,
+            "elite_avg_reward": 15.575752710693001,
+            "elite_age": 4,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 28.970062308548354,
+                "avg_reward": 28.970062308548354,
+                "running_rewards": [
+                    -67.25095103056154,
+                    -16.25006188367724,
+                    -2.7284280996096073,
+                    -55.66000770594849,
+                    28.970062308548354
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 190,
+            "running_reward": -39.88502854343206,
+            "best_reward": 28.970062308548354,
+            "elite_reward": -6.378449813788708,
+            "elite_avg_reward": 6.02875072937474,
+            "elite_age": 11,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 28.970062308548354,
+                "avg_reward": 28.970062308548354,
+                "running_rewards": [
+                    -67.25095103056154,
+                    -16.25006188367724,
+                    -2.7284280996096073,
+                    -55.66000770594849,
+                    28.970062308548354
+                ],
+                "baseline_score": -100000,
+                "mutation_power": 0.2,
+                "hidden_dim": 1,
+                "num_params": 20,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 200,
+            "running_reward": -29.682064226658195,
+            "best_reward": 58.62824347229279,
+            "elite_reward": 19.098248402816417,
+            "elite_avg_reward": 19.801732277900122,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 58.62824347229279,
+                "avg_reward": 58.62824347229279,
+                "running_rewards": [
+                    -17.587104052327607,
+                    -46.60403975194438,
+                    -45.23728219302402,
+                    -49.81343881589679,
+                    58.62824347229279
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.2,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 210,
+            "running_reward": -20.063359616903632,
+            "best_reward": 110.84216306553796,
+            "elite_reward": 68.0677650637679,
+            "elite_avg_reward": 74.89443897436965,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 210.84216306553796,
+                "avg_reward": 110.84216306553796,
+                "running_rewards": [
+                    83.4002074855516,
+                    18.39429757143185,
+                    16.019952863903757,
+                    -22.749394498997543,
+                    110.84216306553796
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.1,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 220,
+            "running_reward": -12.768908596261914,
+            "best_reward": 191.30809361480266,
+            "elite_reward": 100.80911383135174,
+            "elite_avg_reward": 111.09836154668501,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 291.30809361480266,
+                "avg_reward": 191.30809361480266,
+                "running_rewards": [
+                    28.377058381455903,
+                    -27.430503726740778,
+                    -30.54196548181769,
+                    -10.89606223884366,
+                    191.30809361480266
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.1,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 230,
+            "running_reward": 21.153798563416945,
+            "best_reward": 191.30809361480266,
+            "elite_reward": 125.82284137812549,
+            "elite_avg_reward": 121.34516704489667,
+            "elite_age": 4,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 291.30809361480266,
+                "avg_reward": 191.30809361480266,
+                "running_rewards": [
+                    28.377058381455903,
+                    -27.430503726740778,
+                    -30.54196548181769,
+                    -10.89606223884366,
+                    191.30809361480266
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.1,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 240,
+            "running_reward": 25.67986558108738,
+            "best_reward": 191.30809361480266,
+            "elite_reward": 116.95474882792462,
+            "elite_avg_reward": 124.51613448917055,
+            "elite_age": 8,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 291.30809361480266,
+                "avg_reward": 191.30809361480266,
+                "running_rewards": [
+                    28.377058381455903,
+                    -27.430503726740778,
+                    -30.54196548181769,
+                    -10.89606223884366,
+                    191.30809361480266
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.1,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 250,
+            "running_reward": 6.385873842905171,
+            "best_reward": 200.5784113573413,
+            "elite_reward": 79.52309563011286,
+            "elite_avg_reward": 133.9683330243967,
+            "elite_age": 5,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 400.57841135734134,
+                "avg_reward": 200.5784113573413,
+                "running_rewards": [
+                    -45.4500533695671,
+                    81.70395934352887,
+                    -39.54401634098981,
+                    66.74396013928389,
+                    200.5784113573413
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.01,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 260,
+            "running_reward": 43.674518142942176,
+            "best_reward": 200.5784113573413,
+            "elite_reward": 111.24244641563799,
+            "elite_avg_reward": 135.15169279221544,
+            "elite_age": 9,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 400.57841135734134,
+                "avg_reward": 200.5784113573413,
+                "running_rewards": [
+                    -45.4500533695671,
+                    81.70395934352887,
+                    -39.54401634098981,
+                    66.74396013928389,
+                    200.5784113573413
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.01,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 270,
+            "running_reward": 25.119301239675703,
+            "best_reward": 200.5784113573413,
+            "elite_reward": 144.31680986415614,
+            "elite_avg_reward": 146.4793616797951,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 400.57841135734134,
+                "avg_reward": 200.5784113573413,
+                "running_rewards": [
+                    -45.4500533695671,
+                    81.70395934352887,
+                    -39.54401634098981,
+                    66.74396013928389,
+                    200.5784113573413
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.01,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 280,
+            "running_reward": 55.756920556056286,
+            "best_reward": 200.5784113573413,
+            "elite_reward": 188.97273133077277,
+            "elite_avg_reward": 146.46541649336115,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 400.57841135734134,
+                "avg_reward": 200.5784113573413,
+                "running_rewards": [
+                    -45.4500533695671,
+                    81.70395934352887,
+                    -39.54401634098981,
+                    66.74396013928389,
+                    200.5784113573413
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.01,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 290,
+            "running_reward": 48.784982635753394,
+            "best_reward": 200.5784113573413,
+            "elite_reward": 190.5933001179809,
+            "elite_avg_reward": 157.60343586329913,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 400.57841135734134,
+                "avg_reward": 200.5784113573413,
+                "running_rewards": [
+                    -45.4500533695671,
+                    81.70395934352887,
+                    -39.54401634098981,
+                    66.74396013928389,
+                    200.5784113573413
+                ],
+                "baseline_score": -22.670203727758135,
+                "mutation_power": 0.01,
+                "hidden_dim": 2,
+                "num_params": 38,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 300,
+            "running_reward": 68.66799820312988,
+            "best_reward": 233.4463048140336,
+            "elite_reward": 173.07654374325787,
+            "elite_avg_reward": 174.57318416621015,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 433.4463048140336,
+                "avg_reward": 233.4463048140336,
+                "running_rewards": [
+                    75.13201687314358,
+                    -174.36439399339912,
+                    99.88373987217551,
+                    65.57417950516177,
+                    233.4463048140336
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 310,
+            "running_reward": 27.809839370397363,
+            "best_reward": 233.4463048140336,
+            "elite_reward": 92.71879372248847,
+            "elite_avg_reward": 155.11904174487614,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 433.4463048140336,
+                "avg_reward": 233.4463048140336,
+                "running_rewards": [
+                    75.13201687314358,
+                    -174.36439399339912,
+                    99.88373987217551,
+                    65.57417950516177,
+                    233.4463048140336
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 320,
+            "running_reward": 64.84977738532342,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 241.86189223611154,
+            "elite_avg_reward": 162.32072857536895,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 330,
+            "running_reward": 57.241007383889325,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 220.4585385968133,
+            "elite_avg_reward": 169.86967141823342,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 340,
+            "running_reward": 50.5204125438831,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 162.7626290253085,
+            "elite_avg_reward": 171.33163300900688,
+            "elite_age": 8,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 350,
+            "running_reward": 66.3610596167932,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 164.36319474995645,
+            "elite_avg_reward": 163.3003146060954,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 360,
+            "running_reward": 49.31093248905245,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 176.87633179598419,
+            "elite_avg_reward": 158.64330270301554,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 370,
+            "running_reward": 67.97402364176187,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 192.9652282488542,
+            "elite_avg_reward": 163.09084129431426,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 380,
+            "running_reward": 59.53653157688277,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 173.29416867231663,
+            "elite_avg_reward": 172.8385221128978,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 390,
+            "running_reward": 106.02951862662503,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 199.6939804080562,
+            "elite_avg_reward": 181.46060380525378,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 400,
+            "running_reward": 50.59083574451473,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 158.84116708195452,
+            "elite_avg_reward": 168.99832851175117,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 410,
+            "running_reward": 57.35686307885182,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 164.069712035696,
+            "elite_avg_reward": 176.88519646875682,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 420,
+            "running_reward": 86.64453227593215,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 217.9837023307025,
+            "elite_avg_reward": 173.8327343515035,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 430,
+            "running_reward": 58.90749907728127,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 157.66114960665905,
+            "elite_avg_reward": 183.16745433413155,
+            "elite_age": 5,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 440,
+            "running_reward": 55.02395660317194,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 168.20835113131247,
+            "elite_avg_reward": 152.9949471900959,
+            "elite_age": 8,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 450,
+            "running_reward": 71.22207734178389,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 173.972688901145,
+            "elite_avg_reward": 176.96354774242667,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 460,
+            "running_reward": 70.40735396239957,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 205.76076327971776,
+            "elite_avg_reward": 185.0521853536507,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 470,
+            "running_reward": 77.94365298224399,
+            "best_reward": 241.86189223611154,
+            "elite_reward": 161.2977676100133,
+            "elite_avg_reward": 165.56640770826158,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.86189223611154,
+                "avg_reward": 241.86189223611154,
+                "running_rewards": [
+                    32.42807347103639,
+                    177.29379575040386,
+                    133.7498476624832,
+                    32.135533493653426,
+                    241.86189223611154
+                ],
+                "baseline_score": 22.888794015843665,
+                "mutation_power": 0.01,
+                "hidden_dim": 3,
+                "num_params": 58,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 480,
+            "running_reward": 74.92315499124646,
+            "best_reward": 243.4676845396769,
+            "elite_reward": 155.37777739797093,
+            "elite_avg_reward": 188.65542410389165,
+            "elite_age": 5,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 443.4676845396769,
+                "avg_reward": 243.4676845396769,
+                "running_rewards": [
+                    60.60782251067356,
+                    -37.407256326651186,
+                    87.14255333922715,
+                    23.912730025647342,
+                    243.4676845396769
+                ],
+                "baseline_score": 27.1592844546145,
+                "mutation_power": 0.01,
+                "hidden_dim": 7,
+                "num_params": 158,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 490,
+            "running_reward": 32.32864014573016,
+            "best_reward": 243.4676845396769,
+            "elite_reward": 188.3083001456967,
+            "elite_avg_reward": 178.35616512153254,
+            "elite_age": 10,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 443.4676845396769,
+                "avg_reward": 243.4676845396769,
+                "running_rewards": [
+                    60.60782251067356,
+                    -37.407256326651186,
+                    87.14255333922715,
+                    23.912730025647342,
+                    243.4676845396769
+                ],
+                "baseline_score": 27.1592844546145,
+                "mutation_power": 0.01,
+                "hidden_dim": 7,
+                "num_params": 158,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 500,
+            "running_reward": 65.74931596725968,
+            "best_reward": 243.4676845396769,
+            "elite_reward": 191.98443928127213,
+            "elite_avg_reward": 181.91420418277943,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 443.4676845396769,
+                "avg_reward": 243.4676845396769,
+                "running_rewards": [
+                    60.60782251067356,
+                    -37.407256326651186,
+                    87.14255333922715,
+                    23.912730025647342,
+                    243.4676845396769
+                ],
+                "baseline_score": 27.1592844546145,
+                "mutation_power": 0.01,
+                "hidden_dim": 7,
+                "num_params": 158,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 504,
+            "running_reward": 84.08121095734813,
+            "best_reward": 243.4676845396769,
+            "elite_reward": 236.83502033562098,
+            "elite_avg_reward": 200.93114763953963,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 443.4676845396769,
+                "avg_reward": 243.4676845396769,
+                "running_rewards": [
+                    60.60782251067356,
+                    -37.407256326651186,
+                    87.14255333922715,
+                    23.912730025647342,
+                    243.4676845396769
+                ],
+                "baseline_score": 27.1592844546145,
+                "mutation_power": 0.01,
+                "hidden_dim": 7,
+                "num_params": 158,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1500,
+                "slope": 0.2402105367351466,
+                "main_engine_power": 47.0,
+                "side_engine_power": 13.0,
+                "moon_friction": 0.6,
+                "x_variance": 5.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 510,
+            "running_reward": 79.90857588012152,
+            "best_reward": 193.82224634533398,
+            "elite_reward": 166.27072315483403,
+            "elite_avg_reward": -3900.869531299633,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 293.82224634533395,
+                "avg_reward": 193.82224634533398,
+                "running_rewards": [
+                    71.3252399126658,
+                    16.384856014294726,
+                    155.52937104853555,
+                    58.608668064054406,
+                    193.82224634533398
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.1,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 520,
+            "running_reward": 86.188415528857,
+            "best_reward": 234.85889177900103,
+            "elite_reward": 213.10951965025106,
+            "elite_avg_reward": 179.38928541495085,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 434.85889177900106,
+                "avg_reward": 234.85889177900103,
+                "running_rewards": [
+                    85.2389796285915,
+                    -83.01426994568284,
+                    -9.385827225974884,
+                    104.38429577769315,
+                    234.85889177900103
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 530,
+            "running_reward": 44.91778024997075,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 121.63828735446627,
+            "elite_avg_reward": 179.30529742569203,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 540,
+            "running_reward": 82.6598757213394,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 208.6128879164403,
+            "elite_avg_reward": 172.30107893455843,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 550,
+            "running_reward": 81.21601824094718,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 188.33662592709112,
+            "elite_avg_reward": 181.1794926564349,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 560,
+            "running_reward": 44.11031472527756,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 157.90723467693653,
+            "elite_avg_reward": 183.51571873824096,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 570,
+            "running_reward": 81.66639219447487,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 177.7557905847207,
+            "elite_avg_reward": 179.740878579829,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 580,
+            "running_reward": 67.5566377639472,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 157.51433768362168,
+            "elite_avg_reward": 192.15100853618122,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 590,
+            "running_reward": 87.745028036235,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 168.94293525294262,
+            "elite_avg_reward": 173.02465458478724,
+            "elite_age": 10,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 600,
+            "running_reward": 65.7641834172655,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 179.50004788756684,
+            "elite_avg_reward": 198.20271014164888,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 601,
+            "running_reward": 76.80535042494553,
+            "best_reward": 247.57270467736802,
+            "elite_reward": 201.89273262914648,
+            "elite_avg_reward": 200.93196559597686,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 447.57270467736805,
+                "avg_reward": 247.57270467736802,
+                "running_rewards": [
+                    153.3470283818843,
+                    73.47811770271478,
+                    65.64427912415697,
+                    14.640110394147598,
+                    247.57270467736802
+                ],
+                "baseline_score": 109.4787151876624,
+                "mutation_power": 0.01,
+                "hidden_dim": 8,
+                "num_params": 188,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1600,
+                "slope": 0.6307701109389995,
+                "main_engine_power": 24.0,
+                "side_engine_power": 4.5,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 610,
+            "running_reward": 18.78985868931715,
+            "best_reward": 170.79040371200807,
+            "elite_reward": 155.42511536046362,
+            "elite_avg_reward": -872.7895383822324,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 270.7904037120081,
+                "avg_reward": 170.79040371200807,
+                "running_rewards": [
+                    -5.847687149225868,
+                    165.57922854909594,
+                    81.76970137468497,
+                    21.711765038058,
+                    170.79040371200807
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.1,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 620,
+            "running_reward": 50.91875409638904,
+            "best_reward": 206.75345812463252,
+            "elite_reward": 148.88613541587478,
+            "elite_avg_reward": 159.23068331507028,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 406.7534581246325,
+                "avg_reward": 206.75345812463252,
+                "running_rewards": [
+                    84.9986784525089,
+                    113.29042893169182,
+                    -67.5023361235092,
+                    -13.564893032488717,
+                    206.75345812463252
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 630,
+            "running_reward": 19.009601732705157,
+            "best_reward": 209.67656116997264,
+            "elite_reward": 148.2056054451347,
+            "elite_avg_reward": 170.19164792280287,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 409.6765611699726,
+                "avg_reward": 209.67656116997264,
+                "running_rewards": [
+                    -14.500168264381262,
+                    104.85536030229055,
+                    54.54946967891529,
+                    -87.84636751033267,
+                    209.67656116997264
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 640,
+            "running_reward": 60.522760541229204,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 161.85688390839815,
+            "elite_avg_reward": 163.26861482269052,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 650,
+            "running_reward": 82.01470111541295,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 163.68673926884816,
+            "elite_avg_reward": 188.43915272555046,
+            "elite_age": 4,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 660,
+            "running_reward": 52.393054919531345,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 169.9136233728259,
+            "elite_avg_reward": 165.4622982026322,
+            "elite_age": 8,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 670,
+            "running_reward": 47.187785862418664,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 125.50225076717285,
+            "elite_avg_reward": 166.01622251988357,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 680,
+            "running_reward": 66.13274277748931,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 208.61832312579455,
+            "elite_avg_reward": 169.51811299887927,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 690,
+            "running_reward": 14.676902985999035,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 130.95178256487057,
+            "elite_avg_reward": 164.76127520112806,
+            "elite_age": 8,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 700,
+            "running_reward": 48.406930450728865,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 135.69522681082833,
+            "elite_avg_reward": 162.90295862540265,
+            "elite_age": 11,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 710,
+            "running_reward": 75.6485327920575,
+            "best_reward": 227.57348517824184,
+            "elite_reward": 185.11475986454963,
+            "elite_avg_reward": 185.72844113437088,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 427.57348517824187,
+                "avg_reward": 227.57348517824184,
+                "running_rewards": [
+                    134.63967422602096,
+                    10.867151853983788,
+                    105.17923966162445,
+                    22.02097926930994,
+                    227.57348517824184
+                ],
+                "baseline_score": -18.659530789635333,
+                "mutation_power": 0.01,
+                "hidden_dim": 10,
+                "num_params": 254,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 720,
+            "running_reward": 48.6130653236824,
+            "best_reward": 231.35898633963455,
+            "elite_reward": 163.20451387761568,
+            "elite_avg_reward": 175.11896883938715,
+            "elite_age": 5,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 431.35898633963455,
+                "avg_reward": 231.35898633963455,
+                "running_rewards": [
+                    114.4053322398244,
+                    48.78457057587384,
+                    -10.435634977284916,
+                    134.16488980117424,
+                    231.35898633963455
+                ],
+                "baseline_score": 90.07664944106268,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 730,
+            "running_reward": 10.783709863178794,
+            "best_reward": 267.3792809901885,
+            "elite_reward": 193.4406317868008,
+            "elite_avg_reward": 194.14384981355775,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 467.3792809901885,
+                "avg_reward": 267.3792809901885,
+                "running_rewards": [
+                    113.38006906691285,
+                    -77.09172120750495,
+                    -114.38378481819777,
+                    84.23113081298393,
+                    267.3792809901885
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 733,
+            "running_reward": 67.67720817717694,
+            "best_reward": 267.3792809901885,
+            "elite_reward": 201.46396176794573,
+            "elite_avg_reward": 201.43143415570708,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 467.3792809901885,
+                "avg_reward": 267.3792809901885,
+                "running_rewards": [
+                    113.38006906691285,
+                    -77.09172120750495,
+                    -114.38378481819777,
+                    84.23113081298393,
+                    267.3792809901885
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1700,
+                "slope": 0.39077109746152283,
+                "main_engine_power": 38.0,
+                "side_engine_power": 13.7,
+                "moon_friction": 0.9,
+                "x_variance": 13.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 740,
+            "running_reward": 15.527843309071661,
+            "best_reward": 232.4169916169592,
+            "elite_reward": 99.3906412496477,
+            "elite_avg_reward": -2885.369885380267,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 432.4169916169592,
+                "avg_reward": 232.4169916169592,
+                "running_rewards": [
+                    84.25118471984717,
+                    146.18550089803884,
+                    9.178572076583947,
+                    169.00517122044272,
+                    232.4169916169592
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1800,
+                "slope": 0.8767914166160881,
+                "main_engine_power": 35.0,
+                "side_engine_power": 8.8,
+                "moon_friction": 1.0,
+                "x_variance": 9.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 750,
+            "running_reward": 67.80792551723476,
+            "best_reward": 235.34348587106166,
+            "elite_reward": 235.34348587106166,
+            "elite_avg_reward": 181.88853958041796,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 435.34348587106166,
+                "avg_reward": 235.34348587106166,
+                "running_rewards": [
+                    53.72135952166487,
+                    161.64709118252958,
+                    87.29182700318772,
+                    66.94165453265363,
+                    235.34348587106166
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1800,
+                "slope": 0.8767914166160881,
+                "main_engine_power": 35.0,
+                "side_engine_power": 8.8,
+                "moon_friction": 1.0,
+                "x_variance": 9.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 753,
+            "running_reward": 92.42580848632963,
+            "best_reward": 241.9184923108916,
+            "elite_reward": 241.9184923108916,
+            "elite_avg_reward": 200.36308308764868,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 441.91849231089157,
+                "avg_reward": 241.9184923108916,
+                "running_rewards": [
+                    171.3045174958341,
+                    53.2833267828521,
+                    148.18060298934918,
+                    -84.22298366070177,
+                    241.9184923108916
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1800,
+                "slope": 0.8767914166160881,
+                "main_engine_power": 35.0,
+                "side_engine_power": 8.8,
+                "moon_friction": 1.0,
+                "x_variance": 9.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 760,
+            "running_reward": 100.55486808272438,
+            "best_reward": 237.79211538092756,
+            "elite_reward": 181.02552091423954,
+            "elite_avg_reward": -2853.233997692113,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 437.79211538092756,
+                "avg_reward": 237.79211538092756,
+                "running_rewards": [
+                    -84.22298366070177,
+                    -30.383687776416462,
+                    87.63344942670128,
+                    225.9835989410614,
+                    237.79211538092756
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1900,
+                "slope": 0.5586940893530539,
+                "main_engine_power": 30.0,
+                "side_engine_power": 6.8,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 763,
+            "running_reward": 46.917244989183736,
+            "best_reward": 237.79211538092756,
+            "elite_reward": 172.985918295291,
+            "elite_avg_reward": 205.6346616849115,
+            "elite_age": 4,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 437.79211538092756,
+                "avg_reward": 237.79211538092756,
+                "running_rewards": [
+                    -84.22298366070177,
+                    -30.383687776416462,
+                    87.63344942670128,
+                    225.9835989410614,
+                    237.79211538092756
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 1900,
+                "slope": 0.5586940893530539,
+                "main_engine_power": 30.0,
+                "side_engine_power": 6.8,
+                "moon_friction": 0.9,
+                "x_variance": 4.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 770,
+            "running_reward": 31.83452854057152,
+            "best_reward": 209.0622979241512,
+            "elite_reward": 118.59912359473546,
+            "elite_avg_reward": -2892.5647722331073,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 409.0622979241512,
+                "avg_reward": 209.0622979241512,
+                "running_rewards": [
+                    -35.624123029879534,
+                    41.39010323974902,
+                    -33.04998496561645,
+                    -4.759713311874077,
+                    209.0622979241512
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 780,
+            "running_reward": 8.552512286102518,
+            "best_reward": 209.0622979241512,
+            "elite_reward": 141.4311087702163,
+            "elite_avg_reward": 136.38736849159724,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 409.0622979241512,
+                "avg_reward": 209.0622979241512,
+                "running_rewards": [
+                    -35.624123029879534,
+                    41.39010323974902,
+                    -33.04998496561645,
+                    -4.759713311874077,
+                    209.0622979241512
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 790,
+            "running_reward": -19.519531322409726,
+            "best_reward": 215.1087534185036,
+            "elite_reward": 99.80207254069686,
+            "elite_avg_reward": 159.6131540453999,
+            "elite_age": 3,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 415.1087534185036,
+                "avg_reward": 215.1087534185036,
+                "running_rewards": [
+                    -100.65108279263154,
+                    4.4643961524686775,
+                    -39.202722718159464,
+                    126.58294243967771,
+                    215.1087534185036
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 800,
+            "running_reward": 22.559218438399434,
+            "best_reward": 215.1087534185036,
+            "elite_reward": 166.41358162469632,
+            "elite_avg_reward": 146.04820224941778,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 415.1087534185036,
+                "avg_reward": 215.1087534185036,
+                "running_rewards": [
+                    -100.65108279263154,
+                    4.4643961524686775,
+                    -39.202722718159464,
+                    126.58294243967771,
+                    215.1087534185036
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 810,
+            "running_reward": 35.13720303555634,
+            "best_reward": 215.1087534185036,
+            "elite_reward": 185.62455750267924,
+            "elite_avg_reward": 156.94017201328552,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 415.1087534185036,
+                "avg_reward": 215.1087534185036,
+                "running_rewards": [
+                    -100.65108279263154,
+                    4.4643961524686775,
+                    -39.202722718159464,
+                    126.58294243967771,
+                    215.1087534185036
+                ],
+                "baseline_score": 63.78314728828326,
+                "mutation_power": 0.01,
+                "hidden_dim": 12,
+                "num_params": 328,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 820,
+            "running_reward": 39.90168928279013,
+            "best_reward": 224.40836100261305,
+            "elite_reward": 156.81515069895286,
+            "elite_avg_reward": 164.7039404600221,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 424.40836100261305,
+                "avg_reward": 224.40836100261305,
+                "running_rewards": [
+                    25.009072438179125,
+                    24.219906754742194,
+                    34.92052540541039,
+                    67.87327280736021,
+                    224.40836100261305
+                ],
+                "baseline_score": -0.8605425762488821,
+                "mutation_power": 0.01,
+                "hidden_dim": 13,
+                "num_params": 368,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 830,
+            "running_reward": 2.5183402217969038,
+            "best_reward": 224.40836100261305,
+            "elite_reward": 93.64568536511698,
+            "elite_avg_reward": 143.76464923415708,
+            "elite_age": 6,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 424.40836100261305,
+                "avg_reward": 224.40836100261305,
+                "running_rewards": [
+                    25.009072438179125,
+                    24.219906754742194,
+                    34.92052540541039,
+                    67.87327280736021,
+                    224.40836100261305
+                ],
+                "baseline_score": -0.8605425762488821,
+                "mutation_power": 0.01,
+                "hidden_dim": 13,
+                "num_params": 368,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 840,
+            "running_reward": 29.124253334281388,
+            "best_reward": 224.40836100261305,
+            "elite_reward": 156.2598871241724,
+            "elite_avg_reward": 143.5642445204075,
+            "elite_age": 10,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 424.40836100261305,
+                "avg_reward": 224.40836100261305,
+                "running_rewards": [
+                    25.009072438179125,
+                    24.219906754742194,
+                    34.92052540541039,
+                    67.87327280736021,
+                    224.40836100261305
+                ],
+                "baseline_score": -0.8605425762488821,
+                "mutation_power": 0.01,
+                "hidden_dim": 13,
+                "num_params": 368,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 850,
+            "running_reward": 55.611560291690274,
+            "best_reward": 224.40836100261305,
+            "elite_reward": 173.78046534046092,
+            "elite_avg_reward": 174.56474855167878,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 424.40836100261305,
+                "avg_reward": 224.40836100261305,
+                "running_rewards": [
+                    25.009072438179125,
+                    24.219906754742194,
+                    34.92052540541039,
+                    67.87327280736021,
+                    224.40836100261305
+                ],
+                "baseline_score": -0.8605425762488821,
+                "mutation_power": 0.01,
+                "hidden_dim": 13,
+                "num_params": 368,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 860,
+            "running_reward": 48.3962582080283,
+            "best_reward": 224.40836100261305,
+            "elite_reward": 199.1335478200689,
+            "elite_avg_reward": 161.7084495170705,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 424.40836100261305,
+                "avg_reward": 224.40836100261305,
+                "running_rewards": [
+                    25.009072438179125,
+                    24.219906754742194,
+                    34.92052540541039,
+                    67.87327280736021,
+                    224.40836100261305
+                ],
+                "baseline_score": -0.8605425762488821,
+                "mutation_power": 0.01,
+                "hidden_dim": 13,
+                "num_params": 368,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 870,
+            "running_reward": 13.25858100192335,
+            "best_reward": 224.40836100261305,
+            "elite_reward": 123.41685153030653,
+            "elite_avg_reward": 149.76654647534008,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 424.40836100261305,
+                "avg_reward": 224.40836100261305,
+                "running_rewards": [
+                    25.009072438179125,
+                    24.219906754742194,
+                    34.92052540541039,
+                    67.87327280736021,
+                    224.40836100261305
+                ],
+                "baseline_score": -0.8605425762488821,
+                "mutation_power": 0.01,
+                "hidden_dim": 13,
+                "num_params": 368,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 880,
+            "running_reward": 17.130437338341956,
+            "best_reward": 224.40836100261305,
+            "elite_reward": 162.22704395147719,
+            "elite_avg_reward": 172.0240461147198,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 424.40836100261305,
+                "avg_reward": 224.40836100261305,
+                "running_rewards": [
+                    25.009072438179125,
+                    24.219906754742194,
+                    34.92052540541039,
+                    67.87327280736021,
+                    224.40836100261305
+                ],
+                "baseline_score": -0.8605425762488821,
+                "mutation_power": 0.01,
+                "hidden_dim": 13,
+                "num_params": 368,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 890,
+            "running_reward": 66.78172079410724,
+            "best_reward": 240.46851661002583,
+            "elite_reward": 178.18240085905057,
+            "elite_avg_reward": 185.0892888390752,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 440.46851661002586,
+                "avg_reward": 240.46851661002583,
+                "running_rewards": [
+                    58.782728282577295,
+                    -17.48382889089201,
+                    -24.775708342893846,
+                    -4.197528875256441,
+                    240.46851661002583
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 900,
+            "running_reward": 87.8612584905162,
+            "best_reward": 240.46851661002583,
+            "elite_reward": 185.82138677226902,
+            "elite_avg_reward": 176.9714537339296,
+            "elite_age": 4,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 440.46851661002586,
+                "avg_reward": 240.46851661002583,
+                "running_rewards": [
+                    58.782728282577295,
+                    -17.48382889089201,
+                    -24.775708342893846,
+                    -4.197528875256441,
+                    240.46851661002583
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 906,
+            "running_reward": 90.7511335862446,
+            "best_reward": 240.46851661002583,
+            "elite_reward": 239.5426619683899,
+            "elite_avg_reward": 201.47789274549882,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 440.46851661002586,
+                "avg_reward": 240.46851661002583,
+                "running_rewards": [
+                    58.782728282577295,
+                    -17.48382889089201,
+                    -24.775708342893846,
+                    -4.197528875256441,
+                    240.46851661002583
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2000,
+                "slope": 0.3515528620758386,
+                "main_engine_power": 59.0,
+                "side_engine_power": 8.9,
+                "moon_friction": 0.6,
+                "x_variance": 10.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 910,
+            "running_reward": 26.2614911153287,
+            "best_reward": 201.17657982920704,
+            "elite_reward": 139.73426962452066,
+            "elite_avg_reward": -5938.036139766173,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 401.17657982920707,
+                "avg_reward": 201.17657982920704,
+                "running_rewards": [
+                    191.89175571351677,
+                    100.235531818405,
+                    94.5747749037316,
+                    118.36148384548332,
+                    201.17657982920704
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2100,
+                "slope": 0.7875427324381106,
+                "main_engine_power": 46.0,
+                "side_engine_power": 3.6,
+                "moon_friction": 1.0,
+                "x_variance": 15.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 920,
+            "running_reward": 18.140503235889433,
+            "best_reward": 214.54315745868007,
+            "elite_reward": 174.23118606653952,
+            "elite_avg_reward": 170.07715785896792,
+            "elite_age": 2,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 414.54315745868007,
+                "avg_reward": 214.54315745868007,
+                "running_rewards": [
+                    54.86177564543338,
+                    80.66922507259414,
+                    57.95177286865296,
+                    18.27309943527623,
+                    214.54315745868007
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2100,
+                "slope": 0.7875427324381106,
+                "main_engine_power": 46.0,
+                "side_engine_power": 3.6,
+                "moon_friction": 1.0,
+                "x_variance": 15.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 930,
+            "running_reward": 39.23435526854366,
+            "best_reward": 230.93492436819184,
+            "elite_reward": 109.98712040169012,
+            "elite_avg_reward": 166.05230861105906,
+            "elite_age": 4,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 430.93492436819184,
+                "avg_reward": 230.93492436819184,
+                "running_rewards": [
+                    -31.84727545251486,
+                    56.0457438667098,
+                    5.738419111398284,
+                    56.19709900330058,
+                    230.93492436819184
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2100,
+                "slope": 0.7875427324381106,
+                "main_engine_power": 46.0,
+                "side_engine_power": 3.6,
+                "moon_friction": 1.0,
+                "x_variance": 15.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 940,
+            "running_reward": 56.60470859539812,
+            "best_reward": 230.93492436819184,
+            "elite_reward": 189.72317861002756,
+            "elite_avg_reward": 150.89011839953753,
+            "elite_age": 7,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 430.93492436819184,
+                "avg_reward": 230.93492436819184,
+                "running_rewards": [
+                    -31.84727545251486,
+                    56.0457438667098,
+                    5.738419111398284,
+                    56.19709900330058,
+                    230.93492436819184
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2100,
+                "slope": 0.7875427324381106,
+                "main_engine_power": 46.0,
+                "side_engine_power": 3.6,
+                "moon_friction": 1.0,
+                "x_variance": 15.0,
+                "age": 0,
+                "grown": false
+            }
+        },
+        {
+            "step": 950,
+            "running_reward": 33.022507800638415,
+            "best_reward": 230.93492436819184,
+            "elite_reward": 196.35402749479786,
+            "elite_avg_reward": 178.88826890787988,
+            "elite_age": 0,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 430.93492436819184,
+                "avg_reward": 230.93492436819184,
+                "running_rewards": [
+                    -31.84727545251486,
+                    56.0457438667098,
+                    5.738419111398284,
+                    56.19709900330058,
+                    230.93492436819184
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2100,
+                "slope": 0.7875427324381106,
+                "main_engine_power": 46.0,
+                "side_engine_power": 3.6,
+                "moon_friction": 1.0,
+                "x_variance": 15.0,
+                "age": 0,
+                "grown": false
+            }
+        }
+    ]
+}

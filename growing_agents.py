@@ -94,6 +94,66 @@ def train_agent(agent, env, render=False, steps=10):
 
     return best_agent
 
+
+# Aims to find the next top 3 agents by using GA over a population of 30 agents extracted from the previous top 3
+def genetic(agent, env):
+    
+    # Create a new population of 30 agents:
+    agent_population = []
+    agent_population.append(agent)
+
+    for _ in range(5):
+        child_agent = copy.deepcopy(agent)
+        child_agent.init_random_weights()
+        agent_population.append(child_agent)
+    
+    for _ in range(24):
+        
+        # create a new agent by modifying the parameters of this agent
+        #parent = random.choice(agents)
+        child_agent = copy.deepcopy(agent)
+        
+        for param in child_agent.parameters():
+            mutation = child_agent.mutation_power * np.random.normal(size=tuple(param.data.shape))
+            param.data += torch.DoubleTensor(mutation)
+        
+        agent_population.append(child_agent)
+    
+    # Evaluate the population 3 times
+    fitness = []
+    for agent in agent_population:
+        _, fitness_score = fitness_func(agent, env, eval_count=3, render=False)
+        fitness.append(fitness_score)
+    
+    # Sort the population by fitness
+    selected_population = []
+    topT = np.argsort(fitness)[-6:]
+    for i in topT:
+        selected_population.append(agent_population[i])
+    
+    # Evaluate the selected population 10 times
+    fitness = []
+    for agent in selected_population:
+        avg_reward, fitness_score = fitness_func(agent, env, eval_count=10, render=False)
+        agent.avg_reward = avg_reward
+        agent.running_rewards = child_agent.running_rewards[1:] + [avg_reward]
+        agent.fitness_score = fitness_score
+        fitness.append(fitness_score)
+
+    elite_agent = selected_population[np.argmax(fitness)]
+
+    if elite_agent.avg_reward > agent.best_reward:
+        elite_agent.best_reward = elite_agent.avg_reward
+
+    # Only reset age if it is making progress
+    running_avg_reward = sum(agent.running_rewards)/len(agent.running_rewards)
+    if (elite_agent.avg_reward > running_avg_reward+10) and elite_agent.avg_reward > agent.best_reward:
+        elite_agent.age = 0
+    else:
+        elite_agent.age += 1
+    
+    return elite_agent
+
 # This function grows the hidden size of the agent by 1, and does one round of training
 def grow_agent(agent, env):
     print("\nGrowing agent")
@@ -104,7 +164,7 @@ def grow_agent(agent, env):
     new_agent.running_rewards = agent.running_rewards
     new_agent.load_from_agent(agent.state_dict())
     new_agent.baseline_score = agent.avg_reward
-    best_agent = train_agent(new_agent, env)
+    best_agent = genetic(new_agent, env)
 
     return best_agent
 
@@ -112,7 +172,7 @@ def archive(agent, env, step, final=False):
     # archive the agent and environment
     path = "./base_archive/"
     if final:
-        path = "./base_archive/final"
+        path = "./base_archive/final/"
     path = path+str(step)+"_"+str(env.age)+"_"+str(agent.age)
     
     torch.save(agent, path+'.pt')
@@ -125,16 +185,15 @@ def stepper(pair):
     agent, env = pair
                 
     # get the next agent
-    best_agent = train_agent(agent, env)
+    best_agent = genetic(agent, env)
 
-    if best_agent.age >= 50 and best_agent.avg_reward > best_agent.baseline_score:
+    if (best_agent.age >= 50 and best_agent.avg_reward > best_agent.baseline_score) or best_agent.age >= 100:
         # if the agent's capacity is saturated, grow it
         best_agent = grow_agent(best_agent, env)
 
     new_pair = (best_agent, env)
 
     return new_pair
-
 
 def growing_agents(config, envs):
 
@@ -162,7 +221,7 @@ def growing_agents(config, envs):
         population.append((agent,env))
 
     # Train independently for config['steps']
-    for step in range(config['steps']):
+    for step in range(config['steps']+1):
 
         start = time.time()
 
@@ -197,8 +256,7 @@ def growing_agents(config, envs):
             save_run(population, step)
         
         end = time.time()
-        print(end - start)
-        print("Step: {}".format(step), end="\r")
+        print("Step: {}, Time: {}".format(step, end - start), end="\r")
 
 
 def save_run(population, step):
@@ -233,7 +291,7 @@ def write_json(new_data, filename='results.json'):
 if __name__ == "__main__":
 
     config = {
-        "steps": 500
+        "steps": 5000
     }
 
     # params = {
@@ -245,12 +303,12 @@ if __name__ == "__main__":
     #     'x_variance': [0.1, 1, 2, 4, 8, 16]
     # }
 
-    env1 = [0, 0, 10, 1, 1, 1]
-    env2 = [200, 0, 10, 1, 1, 4]
-    env3 = [400, 0.4, 8, 0.5, 1, 4]
-    env4 = [800, -0.4, 6, 0.5, 0.6, 4]
-    env5 = [1000, 0.7, 6, 0.5, 0.6, 8]
-    env6 = [1200, -1, 6, 0.4, 0.6, 16]
+    env1 = [0, 0, 15, 3, 1, 1]
+    env2 = [200, 0, 60, 1, 1, 4]
+    env3 = [700, 0.4, 20, 0.5, 0.7, 4]
+    env4 = [900, 0.5, 11, 0.3, 0.6, 8]
+    env5 = [1000, 0.7, 10, 0.5, 0.6, 8]
+    env6 = [1500, 1, 9, 0.1, 0.2, 16]
 
     envs = [env1, env2, env3, env4, env5, env6]
     #envs = [env1]

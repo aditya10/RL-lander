@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class DynamicNeuralNetwork(nn.Module):
-    def __init__(self, in_dim=8, out_dim=4, hidden_dim=4, mutation_power=0.1):
+    def __init__(self, in_dim=9, out_dim=4, hidden_dim=4, mutation_power=0.1):
         super(DynamicNeuralNetwork, self).__init__()
 
         self.in_dim = in_dim
@@ -16,6 +16,7 @@ class DynamicNeuralNetwork(nn.Module):
         self.fitness_score = -100000
         self.avg_reward = -100000
         self.running_rewards = [-100000]*5
+        self.best_reward = -100000
 
         self.age = 0
 
@@ -33,6 +34,12 @@ class DynamicNeuralNetwork(nn.Module):
         for m in self.modules():
             if isinstance(m, nn.Linear):
                 nn.init.xavier_normal_(m.weight)
+                nn.init.constant_(m.bias, 0)
+
+    def init_random_weights(self):
+        for m in self.modules():
+            if isinstance(m, nn.Linear):
+                nn.init.normal_(m.weight)
                 nn.init.constant_(m.bias, 0)
 
     def load_from_agent(self, d):
@@ -56,6 +63,7 @@ class DynamicNeuralNetwork(nn.Module):
             'baseline_score': self.baseline_score,
             'mutation_power': self.mutation_power,
             'hidden_dim': self.hidden_dim,
-            'num_params': num_params
+            'num_params': num_params,
+            'best_reward': self.best_reward
         }
         return details
