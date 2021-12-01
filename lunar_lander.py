@@ -96,7 +96,6 @@ class LunarLander(gym.Env, EzPickle):
 
     def __init__(self):
         EzPickle.__init__(self)
-        print("Initializing lunar lander environment...")
         self.seed()
         self.viewer = None
 
@@ -111,6 +110,7 @@ class LunarLander(gym.Env, EzPickle):
         self.moon = None
         self.lander = None
         self.particles = []
+        self.set_slope = 0
 
         self.age = 0
         self.grown = False
@@ -159,6 +159,17 @@ class LunarLander(gym.Env, EzPickle):
         }
         return params
 
+    def get_param_array(self):
+        return [self.initial_random, self.slope, self.main_engine_power, self.side_engine_power, self.moon_friction, self.x_variance]
+
+    def set_param_array(self, param_array):
+        self.initial_random = param_array[0]
+        self.slope = param_array[1]
+        self.main_engine_power = param_array[2]
+        self.side_engine_power = param_array[3]
+        self.moon_friction = param_array[4]
+        self.x_variance = param_array[5]
+
     def _destroy(self):
         if not self.moon:
             return
@@ -188,8 +199,9 @@ class LunarLander(gym.Env, EzPickle):
         self.helipad_x1 = chunk_x[CHUNKS // 2 - 1]
         self.helipad_x2 = chunk_x[CHUNKS // 2 + 1]
         self.helipad_y = H / 4
-        self.helipad_y1 = (H / 4) + self.slope
-        self.helipad_y2 = (H / 4) - self.slope
+        self.set_slope = self.np_random.uniform(-self.slope, self.slope)
+        self.helipad_y1 = (H / 4) + self.set_slope
+        self.helipad_y2 = (H / 4) - self.set_slope
         height[CHUNKS // 2 - 2] = self.helipad_y1
         height[CHUNKS // 2 - 1] = self.helipad_y1
         height[CHUNKS // 2 + 0] = self.helipad_y
@@ -392,11 +404,12 @@ class LunarLander(gym.Env, EzPickle):
             vel.x * (VIEWPORT_W / SCALE / 2) / FPS,
             vel.y * (VIEWPORT_H / SCALE / 2) / FPS,
             self.lander.angle,
+            self.set_slope,
             20.0 * self.lander.angularVelocity / FPS,
             1.0 if self.legs[0].ground_contact else 0.0,
             1.0 if self.legs[1].ground_contact else 0.0,
         ]
-        assert len(state) == 8
+        assert len(state) == 9
 
         reward = 0
         shaping = (

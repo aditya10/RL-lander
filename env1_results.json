@@ -3604,6 +3604,41 @@
                 "age": 0,
                 "grown": false
             }
+        },
+        {
+            "step": 960,
+            "running_reward": 37.17638268719721,
+            "best_reward": 230.93492436819184,
+            "elite_reward": 119.93554353661018,
+            "elite_avg_reward": 143.53407735210456,
+            "elite_age": 1,
+            "best_agent": {
+                "age": 0,
+                "fitness_score": 430.93492436819184,
+                "avg_reward": 230.93492436819184,
+                "running_rewards": [
+                    -31.84727545251486,
+                    56.0457438667098,
+                    5.738419111398284,
+                    56.19709900330058,
+                    230.93492436819184
+                ],
+                "baseline_score": -129.76623926657348,
+                "mutation_power": 0.01,
+                "hidden_dim": 15,
+                "num_params": 454,
+                "best_reward": -100000
+            },
+            "env": {
+                "initial_random": 2100,
+                "slope": 0.7875427324381106,
+                "main_engine_power": 46.0,
+                "side_engine_power": 3.6,
+                "moon_friction": 1.0,
+                "x_variance": 15.0,
+                "age": 0,
+                "grown": false
+            }
         }
     ]
 }
