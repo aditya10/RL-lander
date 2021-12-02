@@ -93,15 +93,14 @@ if __name__ == "__main__":
 
 
     
-    env1 = [0, 0, 15, 3, 1, 1]
+    env1 = [1000, 0, 9, 0.6, 1, 1]
     env2 = [200, 0, 60, 1, 1, 4]
     env3 = [700, 0.4, 20, 0.5, 0.7, 4]
     env4 = [900, 0.5, 11, 0.3, 0.6, 8]
     env5 = [1000, 0.7, 10, 0.5, 0.6, 8]
     env6 = [1500, 1, 9, 0.1, 0.2, 16]
     envs = [env1, env2, env3, env4, env5, env6]
-    #envs = [env1]
-    
+
     for env_params in envs:
         rewards = []
         env = gym.make('LunarLander-v2')
@@ -114,3 +113,4 @@ if __name__ == "__main__":
         print(np.mean(rewards))
         print(np.max(rewards))
         print(len([i for i in rewards if i > 200]))
+

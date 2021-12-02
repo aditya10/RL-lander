@@ -51,8 +51,8 @@ MAIN_ENGINE_POWER = 13.0
 SIDE_ENGINE_POWER = 0.6
 
 INITIAL_RANDOM = 1000.0  # Set 1500 to make game harder
-X_VARIANCE = 1
-SLOPE = -1
+X_VARIANCE = 4
+SLOPE = 0
 MOON_FRICTION = 0.8
 
 LANDER_POLY = [(-14, +17), (-17, 0), (-17, -10), (+17, -10), (+17, 0), (+14, +17)]
@@ -337,7 +337,7 @@ class LunarLander(gym.Env, EzPickle):
                 m_power = (np.clip(action[0], 0.0, 1.0) + 1.0) * 0.5  # 0.5..1.0
                 assert m_power >= 0.5 and m_power <= 1.0
             else:
-                m_power = 1.0
+                m_power = 0.04*self.main_engine_power+0.54
             ox = (
                 tip[0] * (4 / SCALE + 2 * dispersion[0]) + side[0] * dispersion[1]
             )  # 4 is move a bit downwards, +-2 for randomness
@@ -596,7 +596,7 @@ if __name__ == "__main__":
     rewards = []
     for i in range(10):
         env = LunarLander()
-        env.set_parameters(params["initial_random"][-1], params["slope"][-1], params["main_engine_power"][-1], params["side_engine_power"][3], params["moon_friction"][-1], params["x_variance"][-1])
+        env.set_parameters(main_engine_power=20)
         r = demo_heuristic_lander(env, render=False, prints=False)
         rewards.append(r)
         del env

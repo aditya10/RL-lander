@@ -183,25 +183,27 @@ class MultiAgent(object):
 def grow_env(env):
 
     new_env = gym.make('LunarLander-v2')
-    new_env.age = env.age + 1
     
-    initial_random = max(env.initial_random + 100, 1500)
-    slope = np.random.uniform(low=0.1, high=1.0)
-    main_engine_power = np.floor(np.random.uniform(9, 60))
-    side_engine_power = np.round(np.random.uniform(0.1, 16), 1)
-    moon_friction = np.round(np.random.uniform(0.2, 1), 1)
+    initial_random = min(env.initial_random + 200, 1500)
+    slope = np.round(np.random.uniform(low=0.1, high=1.0), 1)
+    main_engine_power = min(env.main_engine_power+4, np.floor(np.random.uniform(9, 40)))
+    side_engine_power = np.round(np.random.uniform(0.1, 6), 1)
+    moon_friction = np.round(np.random.uniform(0.1, 1.0), 1)
     x_variance = np.floor(np.random.uniform(1, 16))
 
     new_env.set_parameters(initial_random, slope, main_engine_power, side_engine_power, moon_friction, x_variance)
-    return new_env
+
+    distance = np.linalg.norm(np.array(env.get_param_array())-np.array(new_env.get_param_array()))
+    return new_env, distance
 
 def next_env(multi_agent, env):
 
     children = []
     rewards = []
-    for _ in range(10):
-        new_env = grow_env(env)
-
+    distances = []
+    for _ in range(20):
+        new_env, dist = grow_env(env)
+        
         new_agent = copy.deepcopy(multi_agent)
         
         new_agent.genetic(new_env)
@@ -209,16 +211,16 @@ def next_env(multi_agent, env):
         if new_agent.elite_reward > -200 and new_agent.elite_reward < 200:
             children.append(new_env)
             rewards.append(new_agent.elite_reward)
+            distances.append(dist)
 
     if len(children) > 0:
-        best_env_i = np.argmax(rewards)
+        best_env_i = np.argmax(distances)
         print("Found a child!")
         return children[best_env_i]
     else:
         print("Random environment...")
         random_env = grow_env(env)
         return random_env
-
 
 def growing_multi_agents(config):
 
@@ -327,29 +329,29 @@ if __name__ == "__main__":
 
     config1 = {
         "steps": 5000,
-        "json_filepath": "env1_results.json",
-        "folderpath": "./env1_archive/",
-        "env": "env1",
+        "json_filepath": "env_1_results.json",
+        "folderpath": "./env_1_archive/",
+        "env": "env_1",
         "N": 200,
         "T": 20,
         "max_age": 10,
-        "params": [0, 0, 15, 3, 1, 1]
+        "params": [0, 0, 10, 3, 1, 1]
     }
     config2 = {
         "steps": 5000,
-        "json_filepath": "env2_results.json",
-        "folderpath": "./env2_archive/",
-        "env": "env2",
+        "json_filepath": "env_2_results.json",
+        "folderpath": "./env_2_archive/",
+        "env": "env_2",
         "N": 200,
         "T": 20,
         "max_age": 10,
-        "params": [200, 0, 60, 1, 1, 4]
+        "params": [200, 0, 30, 1, 1, 4]
     }
     config3 = {
         "steps": 5000,
-        "json_filepath": "env3_results.json",
-        "folderpath": "./env3_archive/",
-        "env": "env3",
+        "json_filepath": "env_3_results.json",
+        "folderpath": "./env_3_archive/",
+        "env": "env_3",
         "N": 200,
         "T": 20,
         "max_age": 10,
@@ -357,9 +359,9 @@ if __name__ == "__main__":
     }
     config4 = {
         "steps": 5000,
-        "json_filepath": "env4_results.json",
-        "folderpath": "./env4_archive/",
-        "env": "env4",
+        "json_filepath": "env_4_results.json",
+        "folderpath": "./env_4_archive/",
+        "env": "env_4",
         "N": 200,
         "T": 20,
         "max_age": 10,
@@ -367,13 +369,13 @@ if __name__ == "__main__":
     }
     config5 = {
         "steps": 5000,
-        "json_filepath": "env5_results.json",
-        "folderpath": "./env5_archive/",
-        "env": "env5",
+        "json_filepath": "env_5_results.json",
+        "folderpath": "./env_5_archive/",
+        "env": "env_5",
         "N": 200,
         "T": 20,
         "max_age": 10,
-        "params": [1000, 0.7, 10, 0.5, 0.6, 8]
+        "params": [1000, 0.7, 15, 0.5, 0.6, 8]
     }
     config6 = {
         "steps": 5000,
@@ -386,27 +388,7 @@ if __name__ == "__main__":
         "params": [1500, 1, 9, 0.1, 0.2, 16]
     }
     
-
-    env1 = [0, 0, 15, 3, 1, 1]
-    env2 = [200, 0, 60, 1, 1, 4]
-    env3 = [700, 0.4, 20, 0.5, 0.7, 4]
-    env4 = [900, 0.5, 11, 0.3, 0.6, 8]
-    env5 = [1000, 0.7, 10, 0.5, 0.6, 8]
-    env6 = [1500, 1, 9, 0.1, 0.2, 16]
-
-    # envs = [env1, env2, env3, env4, env5, env6]
-    #envs = [env1]
-    #growing_multi_agents(config, env5)
-
-    # with ProcessPoolExecutor() as executor:
-    #     # these return immediately and are executed in parallel, on separate processes
-    #     executor.submit(growing_multi_agents, config6)
-    #     executor.submit(growing_multi_agents, config5)
-    #     executor.submit(growing_multi_agents, config4)
-    #     executor.submit(growing_multi_agents, config3)
-    #     executor.submit(growing_multi_agents, config1)
-    #     executor.submit(growing_multi_agents, config2)
-    growing_multi_agents(config4)
+    growing_multi_agents(config5)
         
         
         
